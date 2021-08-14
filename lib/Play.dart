@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:heads_or_tails/Result.dart';
+import 'dart:math';
 
 class Play extends StatefulWidget {
   const Play({Key? key}) : super(key: key);
@@ -11,6 +13,15 @@ class _PlayState extends State<Play> {
 
   void _showResult(){
 
+    var itens = ["head", "tail"];
+    var number = Random().nextInt(itens.length);
+    var result = itens[number];
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Result(result)
+        ));
   }
 
   @override
